@@ -1,14 +1,14 @@
 // Beats 5.4% Runtime, beats 5.12% Memory
 function isValid(s: string): boolean {
-  if (s.length === 1) {
+  // Don't actually need this check
+  /* if (s.length === 1) {
     // If there's only 1 paren in the string, then it is not a valid parentheses
     return false;
-  }
+  } */
 
   let stack = [];
 
   for (let el of s) {
-    console.log(el);
     switch (
       el // Wouldn't work with || operator, you have to create individual cases for (,[, and {
     ) {
@@ -20,25 +20,21 @@ function isValid(s: string): boolean {
       case ")":
         let paren = stack.pop();
         if (paren != "(") {
-          console.log(paren);
           return false;
         }
         break;
       case "]":
         let bracket = stack.pop();
         if (bracket != "[") {
-          console.log("bracket");
           return false;
         }
         break;
       case "}":
         let curly = stack.pop();
         if (curly != "{") {
-          console.log("curly");
           return false;
         }
     }
-    console.log(stack);
   }
 
   if (stack.length > 0) {
