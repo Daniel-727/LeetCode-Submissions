@@ -1,0 +1,22 @@
+{
+  "devDependencies": {
+    "typescript": "^5.2.2"
+  },
+  "name": "leetcode-submissions",
+  "version": "1.0.0",
+  "main": "1 - Two Sum.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Daniel-727/LeetCode-Submissions.git"
+  },
+  "author": "Daniel Li",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Daniel-727/LeetCode-Submissions/issues"
+  },
+  "homepage": "https://github.com/Daniel-727/LeetCode-Submissions#readme",
+  "description": ""
+}
