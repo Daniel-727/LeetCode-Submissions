@@ -2,6 +2,8 @@
 // Study this solution
 /* Takeaways
 
+use npx tsc to compile typescript into javascript code
+
 1. object keys can only be string or number.
 2. [key: string]: string[], this syntax means that the object will have keys of type string and values of type string array
 3. Object.keys(obj) enumerates through the keys of the object obj
@@ -15,34 +17,41 @@ function groupAnagrams(strs) {
     strs.forEach((str) => {
         let doesExist = false;
         Object.keys(hash).forEach((key) => {
-            if (isAnagram(str, key)) {
-                hash[key].push(str);
-                doesExist = true;
-            }
+            console.log(key);
+            /* if (isAnagram(str, key)) {
+              //What key are we inputting for the isAnagram function?
+              hash[key].push(str);
+              doesExist = true;
+            } */
         });
         if (!doesExist) {
             hash[str] = [str];
         }
     });
-    console.log(hash);
+    /* console.log(`hash: ${JSON.stringify(hash)}`); */
     return [...Object.keys(hash).map((k) => hash[k])];
 }
 console.log(groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"]));
 /* strs = ["eat","tea","tan","ate","nat","bat"] */
-function isAnagram(s, t) {
-    if (s.length !== t.length)
-        return false;
-    var first = s.split("");
-    const second = t.split("");
-    for (let i = 0; i < second.length; i++) {
-        const element = second[i];
-        let found = first.indexOf(element);
-        if (found !== -1) {
-            first[found] = null;
-        }
-        else {
-            return false;
-        }
+// Study this function next
+/* function isAnagram(s: string, t: string) {
+  if (s.length !== t.length) return false;
+
+  var first: Array<string | null> = s.split(""); // First will be an array of string of an empty array
+
+  const second = t.split(""); // How are we getting the input for t?
+
+  for (let i = 0; i < second.length; i++) {
+    const element = second[i];
+
+    let found = first.indexOf(element);
+
+    if (found !== -1) {
+      first[found] = null;
+    } else {
+      return false;
     }
-    return true;
-}
+  }
+
+  return true;
+} */
