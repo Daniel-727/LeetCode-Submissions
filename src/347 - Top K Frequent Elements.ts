@@ -1,3 +1,4 @@
+// Solution creating hashTable (this took 355ms beast 5% and 50.26MB of memory beast 12%)
 function topKFrequent(nums: number[], k: number): number[] {
   let hash = {}; // Hashmap
   let result = []; // Result to return
@@ -26,7 +27,7 @@ function topKFrequent(nums: number[], k: number): number[] {
 
     let key = Object.keys(hash).find((key) => hash[key] === max);
     result.push(key); // Push the key with the most occurences onto Result array
-    delete hash[key]; // Remove the key from the hashTable
+    delete hash[key]; // Remove the key from the hashTable in order to not duplicate the same key in our results array
   }
 
   return result;
