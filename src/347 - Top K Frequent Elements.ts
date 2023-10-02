@@ -1,4 +1,4 @@
-// Solution creating hashTable (this took 355ms beast 5% and 50.26MB of memory beast 12%)
+// Solution creating hashTable (this took 355ms beats 5% and 50.26MB of memory beats 12%)
 function topKFrequent(nums: number[], k: number): number[] {
   let hash = {}; // Hashmap
   let result = []; // Result to return

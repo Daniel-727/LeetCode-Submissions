@@ -1,5 +1,5 @@
 // Solution creating hashtable (this took 1639 ms beats 5% and 138.92MB of memory beats 5%)
-function twoSum(numbers: number[], target: number): number[] {
+/*function twoSum(numbers: number[], target: number): number[] {
   const hashTable = {};
 
   for (let i = 0; i < numbers.length; i++) {
@@ -43,5 +43,25 @@ function twoSum(numbers: number[], target: number): number[] {
   }
 
   // If code reaches here, it means there were no two indices that add up to target, so return empty array?
+  return [];
+} */
+
+// Solution just using two pointers at the opposite ends of the array (took 58ms beats 69% and 43.91MB of memory beats 26%)
+function twoSum(numbers: number[], target: number): number[] {
+  let L = 0;
+  let R = numbers.length - 1;
+
+  while (L < R) {
+    if (numbers[L] + numbers[R] === target) {
+      return [L + 1, R + 1];
+    } else if (numbers[L] + numbers[R] < target) {
+      L++;
+    } else {
+      R--;
+    }
+  }
+
+  // If code reaches this point then there are no numbers that add up to target
+
   return [];
 }
