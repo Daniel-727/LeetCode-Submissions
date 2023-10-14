@@ -22,7 +22,7 @@
     return max;
 }; */
 
-// better O(n) solution using pointers on the opposite ends of the array
+// better O(n) solution using pointers on the opposite ends of the array (took 1110ms beats 5.07% took 83.18MB beats 6.04%)
 function maxArea(height: number[]): number {
   let left = 0;
   let right = height.length - 1;
